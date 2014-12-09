@@ -30,10 +30,19 @@ gem 'spring',        group: :development
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+group :development do
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv', '~> 2.0' # required
+  gem 'capistrano-rbenv-install', '~> 1.2.0'
+  gem 'capistrano-postgresql', '~> 4.2.0'
+  gem 'capistrano-safe-deploy-to', '~> 1.1.1'
+  gem 'capistrano-faster-assets', '~> 1.0'
+  gem 'capistrano-unicorn-nginx', '~> 3.1.0'
+  gem 'capistrano-secrets-yml', '~> 1.0.0'
+end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
